@@ -1,0 +1,31 @@
+img.is-centered {
+    display: block;
+    margin: 0 auto;
+}
+
+.animate-up-down {
+    animation: up-down 8s ease-in-out infinite
+}
+
+
+@keyframes up-down {
+    0% {
+        transform: translateY(-60px)
+    }
+    50% {
+        transform: translateY(-100px)
+    }
+    100% {
+        transform: translateY(-60px)
+    }
+}
+
+html {
+    /*scroll-snap-type: y mandatory;*/
+    /*overflow-y:hidden;*/
+}
+
+section, .section {
+    /*min-height: 100vh;*/
+    /*scroll-snap-align: start;*/
+}
