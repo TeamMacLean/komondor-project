@@ -1,3 +1,3 @@
 # komondor-project
 
-https://wookoouk.github.io/komondor-project/index.html
+https://TeamMacLean.github.io/komondor-project/index.html
