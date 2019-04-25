@@ -5,17 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Komondor</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.3.0/frappe-gantt.css">
     <link rel="stylesheet" href="style/custom.css">
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/frappe-gantt/0.3.0/frappe-gantt.min.js"></script>
 </head>
 <body>
 
-<section class="hero is-large is-bold home-hero">
+<section class="hero is-large is-bold home-hero" id="section1">
     <div class="hero-body">
         <div class="container">
 
 
-            <img src="img/logo/logo.svg" style="width:200px;height:200px;" class="is-centered animate-up-down">
+            <img src="img/logo/logo.svg" style="width:200px;height:200px;" class="is-centered">
+            <br/><br/>
             <h1 class="title has-text-centered is-1">Research, Collaborate, Win!</h1>
             <p class="subtitle has-text-centered is-3"><strong>Komondor</strong> is a place to store, share and
                 collaborate your scientific
@@ -116,12 +119,175 @@
             <br/><br/>
         </div>
 
-        <br/>
-        <br/>
-        <img class="is-centered" src="img/logo/logo_outline_dark.svg" alt="logo" style="width: 120px;">
+        <div id="gantt"></div>
 
     </div>
+
+
+    <img class="is-centered" src="img/logo/logo_outline_dark.svg" alt="logo" style="width: 120px;">
 </section>
+
+<script>
+    var tasks = [
+        {
+            id: '1.1',
+            name: 'LDAP Authentication',
+            start: '2019-05-01',
+            end: '2019-06-01',
+            progress: 0,
+            dependencies: ''
+        },
+        {
+            id: '1.2',
+            name: 'Create Projects',
+            start: '2019-05-01',
+            end: '2019-06-01',
+            progress: 100,
+            dependencies: '1.1'
+        },
+        {
+            id: '1.3',
+            name: 'Create Samples',
+            start: '2019-05-01',
+            end: '2019-06-01',
+            progress: 50,
+            dependencies: '1.2'
+        },
+        {
+            id: '1.4',
+            name: 'Create Runs',
+            start: '2019-05-01',
+            end: '2019-06-01',
+            progress: 0,
+            dependencies: '1.3'
+        },
+        {
+            id: '1.5',
+            name: 'Resumable Uploads',
+            start: '2019-05-01',
+            end: '2019-06-01',
+            progress: 0,
+            dependencies: '1.4'
+        },
+
+
+        {
+            id: '2.1',
+            name: 'Galaxy Integration',
+            start: '2019-06-01',
+            end: '2019-07-01',
+            progress: 0,
+            dependencies: '1.5'
+        },
+        {
+            id: '2.2',
+            name: 'Search',
+            start: '2019-06-01',
+            end: '2019-07-01',
+            progress: 0,
+            dependencies: '2.1'
+        },
+        {
+            id: '2.3',
+            name: 'Tagging',
+            start: '2019-06-01',
+            end: '2019-07-01',
+            progress: 0,
+            dependencies: '2.2'
+        },
+
+
+        {
+            id: '3.1',
+            name: 'Download as',
+            start: '2019-07-01',
+            end: '2019-08-01',
+            progress: 0,
+            dependencies: '2.3'
+        },
+        {
+            id: '3.2',
+            name: 'Wiki',
+            start: '2019-07-01',
+            end: '2019-08-01',
+            progress: 0,
+            dependencies: '3.1'
+        },
+        {
+            id: '3.3',
+            name: 'Visualizations',
+            start: '2019-07-01',
+            end: '2019-08-01',
+            progress: 0,
+            dependencies: '3.2'
+        },
+        {
+            id: '3.4',
+            name: 'S3 Backend',
+            start: '2019-07-01',
+            end: '2019-08-01',
+            progress: 0,
+            dependencies: '3.3'
+        },
+
+
+        {
+            id: '4.1',
+            name: 'Social Authentication',
+            start: '2019-08-01',
+            end: '2019-09-01',
+            progress: 0,
+            dependencies: '3.4'
+        },
+        {
+            id: '4.2',
+            name: 'Github Authentication',
+            start: '2019-08-01',
+            end: '2019-09-01',
+            progress: 0,
+            dependencies: '4.1'
+        },
+        {
+            id: '4.3',
+            name: 'Local Authentication',
+            start: '2019-08-01',
+            end: '2019-09-01',
+            progress: 100,
+            dependencies: '4.2'
+        },
+        {
+            id: '4.4',
+            name: 'Collaboration',
+            start: '2019-08-01',
+            end: '2019-09-01',
+            progress: 0,
+            dependencies: '4.3'
+        },
+
+        {
+            id: 'public release',
+            name: 'Public Release',
+            start: '2019-09-01',
+            end: '2019-10-01',
+            progress: 0,
+            dependencies: '4.4'
+        },
+
+    ];
+    var gantt = new Gantt("#gantt", tasks, {
+        header_height: 50,
+        column_width: 30,
+        step: 24,
+        view_modes: ['Day', 'Week', 'Month', 'Year'],
+        bar_height: 20,
+        bar_corner_radius: 3,
+        arrow_curve: 5,
+        padding: 18,
+        view_mode: 'Month',
+        date_format: 'YYYY-MM-DD',
+        custom_popup_html: null
+    });
+</script>
 
 
 </body>
