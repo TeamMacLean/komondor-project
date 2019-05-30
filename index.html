@@ -132,40 +132,40 @@
         {
             id: '1.1',
             name: 'LDAP Authentication',
-            start: '2019-05-01',
-            end: '2019-06-01',
+            start: '2019-06-01',
+            end: '2019-07-01',
             progress: 0,
             dependencies: ''
         },
         {
             id: '1.2',
             name: 'Create Projects',
-            start: '2019-05-01',
-            end: '2019-06-01',
+            start: '2019-06-01',
+            end: '2019-07-01',
             progress: 100,
             dependencies: '1.1'
         },
         {
             id: '1.3',
             name: 'Create Samples',
-            start: '2019-05-01',
-            end: '2019-06-01',
+            start: '2019-06-01',
+            end: '2019-07-01',
             progress: 50,
             dependencies: '1.2'
         },
         {
             id: '1.4',
             name: 'Create Runs',
-            start: '2019-05-01',
-            end: '2019-06-01',
+            start: '2019-06-01',
+            end: '2019-07-01',
             progress: 0,
             dependencies: '1.3'
         },
         {
             id: '1.5',
             name: 'Resumable Uploads',
-            start: '2019-05-01',
-            end: '2019-06-01',
+            start: '2019-06-01',
+            end: '2019-07-01',
             progress: 0,
             dependencies: '1.4'
         },
@@ -174,24 +174,24 @@
         {
             id: '2.1',
             name: 'Galaxy Integration',
-            start: '2019-06-01',
-            end: '2019-07-01',
+            start: '2019-07-01',
+            end: '2019-08-01',
             progress: 0,
             dependencies: '1.5'
         },
         {
             id: '2.2',
             name: 'Search',
-            start: '2019-06-01',
-            end: '2019-07-01',
+            start: '2019-07-01',
+            end: '2019-08-01',
             progress: 0,
             dependencies: '2.1'
         },
         {
             id: '2.3',
             name: 'Tagging',
-            start: '2019-06-01',
-            end: '2019-07-01',
+            start: '2019-07-01',
+            end: '2019-08-01',
             progress: 0,
             dependencies: '2.2'
         },
@@ -200,32 +200,32 @@
         {
             id: '3.1',
             name: 'Download as',
-            start: '2019-07-01',
-            end: '2019-08-01',
+            start: '2019-08-01',
+            end: '2019-09-01',
             progress: 0,
             dependencies: '2.3'
         },
         {
             id: '3.2',
             name: 'Wiki',
-            start: '2019-07-01',
-            end: '2019-08-01',
+            start: '2019-08-01',
+            end: '2019-09-01',
             progress: 0,
             dependencies: '3.1'
         },
         {
             id: '3.3',
             name: 'Visualizations',
-            start: '2019-07-01',
-            end: '2019-08-01',
+            start: '2019-08-01',
+            end: '2019-09-01',
             progress: 0,
             dependencies: '3.2'
         },
         {
             id: '3.4',
             name: 'S3 Backend',
-            start: '2019-07-01',
-            end: '2019-08-01',
+            start: '2019-08-01',
+            end: '2019-09-01',
             progress: 0,
             dependencies: '3.3'
         },
@@ -234,32 +234,32 @@
         {
             id: '4.1',
             name: 'Social Authentication',
-            start: '2019-08-01',
-            end: '2019-09-01',
+            start: '2019-09-01',
+            end: '2019-10-01',
             progress: 0,
             dependencies: '3.4'
         },
         {
             id: '4.2',
             name: 'Github Authentication',
-            start: '2019-08-01',
-            end: '2019-09-01',
+            start: '2019-09-01',
+            end: '2019-10-01',
             progress: 0,
             dependencies: '4.1'
         },
         {
             id: '4.3',
             name: 'Local Authentication',
-            start: '2019-08-01',
-            end: '2019-09-01',
+            start: '2019-09-01',
+            end: '2019-10-01',
             progress: 100,
             dependencies: '4.2'
         },
         {
             id: '4.4',
             name: 'Collaboration',
-            start: '2019-08-01',
-            end: '2019-09-01',
+            start: '2019-09-01',
+            end: '2019-10-01',
             progress: 0,
             dependencies: '4.3'
         },
@@ -267,8 +267,8 @@
         {
             id: 'public release',
             name: 'Public Release',
-            start: '2019-09-01',
-            end: '2019-10-01',
+            start: '2019-10-01',
+            end: '2019-11-01',
             progress: 0,
             dependencies: '4.4'
         },
